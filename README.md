@@ -1,10 +1,10 @@
 # auto_clock_in
-#### requirements
+## requirements
   * python3
     * package selenium
   * chromium-browser
   * chromium-chromedriver
-#### quick start
+## quick start
   * install chrome
     ``` bash
     sudo apt-get install  chromium-browser chromium-chromedriver
