@@ -10,6 +10,7 @@
     sudo apt-get install  chromium-browser chromium-chromedriver
     ```
   * install python package selenium
+    
     *assume that python3 and related pip3 are available
     ``` bash
     pip3 install selenium
@@ -27,4 +28,5 @@
     ```
   * python3 autoClockIn.py
     * check whether the auto clock in succeed
-  * add python3 autoClockIn.py to crontab
+  * add python3 autoClockIn.py to **crontab**
+    * crontab can help you to automatically run this process everyday
