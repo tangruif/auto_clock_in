@@ -62,8 +62,10 @@ try:
     
     print(driver.find_element_by_xpath('//*[@id="wapcf"]').get_attribute('style'))
     print('success')
-except BaseException:
+except Exception as e:
     print("error")
+    import myemail
+    myemail.sendWarning(str(e))
 
 #最后退出浏览器
 driver.quit()
