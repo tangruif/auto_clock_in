@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.alert import Alert
 import time
+import os
 
 # 创建chrome参数对象
 opt = webdriver.ChromeOptions()
@@ -22,7 +23,7 @@ driver.get('https://app.bupt.edu.cn/ncov/wap/default/index')
 try:
     id = ""
     passwd = ""
-    with open("./password.conf") as f:
+    with open(os.path.dirname(__file__) + "/password.conf") as f:
         id = f.readline()
         passwd = f.readline()
     # 登录
@@ -60,7 +61,7 @@ try:
     
     time.sleep(2)
     
-    print(driver.find_element_by_xpath('//*[@id="wapcf"]').get_attribute('style'))
+    #print(driver.find_element_by_xpath('//*[@id="wapcf"]').get_attribute('style'))
     print('success')
 except Exception as e:
     print("error")

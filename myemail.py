@@ -1,11 +1,12 @@
 def sendWarning(content):
     import smtplib
+    import os
     from email.mime.text import MIMEText
     msg_from=''
     passwd=''                                   
     msg_to=''                                  
 
-    with open("./email_msg.conf") as f:
+    with open(os.path.dirname(__file__) + "/email_msg.conf") as f:
         msg_from = f.readline();
         passwd = f.readline();
         msg_to = f.readline();
