@@ -9,6 +9,9 @@ def sendWarning(content):
         msg_from = f.readline();
         passwd = f.readline();
         msg_to = f.readline();
+    msg_from = msg_from.strip()
+    passwd = passwd.strip()
+    msg_to = msg_to.strip()
                                 
     subject="自动打卡失败提醒"                                          
     msg = MIMEText(content)
@@ -20,7 +23,7 @@ def sendWarning(content):
         s.login(msg_from, passwd)
         s.sendmail(msg_from, msg_to, msg.as_string())
         print("发送成功")
-    except s.SMTPException:
-        print("发送失败")
+    except Exception as e:
+        print(str(e))
     finally:
         s.quit()
